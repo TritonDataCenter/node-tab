@@ -1,5 +1,5 @@
 {
-  "name": "node-tab",
+  "name": "tab",
   "version": "0.0.0",
   "description": "Unix-style tables for command-line utilities",
   "main": "lib/tab.js",
@@ -9,5 +9,9 @@
   },
   "keywords": [ "cli", "unix", "table" ],
   "author": "Dave Pacheco <dap@joyent.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+  	"assert-plus": "0.1.0",
+	"extsprintf": "1.0.1"
+  }
 }

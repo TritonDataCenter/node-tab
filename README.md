@@ -27,9 +27,9 @@ To write a simple table to stdout:
 
 This outputs:
 
-    PID   TTY     TIME    CMD
-    60881 ttys000 0:00.19 -bash
-    61674 ttys000 0:00.17 vim README.md
+   PID TTY TIME CMD 
+   60881 ttys000 0:00.19 -bash 
+   61674 ttys000 0:00.17 vim README.md 
 
 ### Alternate output stream
 
@@ -57,7 +57,7 @@ alignments:
             'width': 6
         }, {
             'label': 'TTY',
-            'width': 7,
+            'width': 7
         }, {
             'label': 'TIME',
             'align': 'right',
