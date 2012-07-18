@@ -135,6 +135,22 @@ individual records:
     });
 
 
+### Other options
+
+You can also omit the header row or change the column and row separators:
+
+    mod_tab.emitTable({
+        'columns': [ 'name', 'passwd', 'uid', 'gid', 'gecos', 'home', 'shell' ],
+	'columnSeparator': ':',
+	'rowSeparator': ';\n',
+	'omitHeader': true,
+        'rows': [
+            [ 'root', '*', '0', '0', 'Admin', '/var/root', '/bin/sh' ],
+            [ 'nobody', '*', '-2', '-2', 'Unpriv', '/var/empty', '/usr/bin/false' ]
+        ]
+    });
+
+
 ## Input overview
 
 The goal of the input interface is to ingest such tables as either objects or
