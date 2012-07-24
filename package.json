@@ -1,6 +1,6 @@
 {
   "name": "tab",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Unix-style tables for command-line utilities",
   "main": "lib/tab.js",
   "repository": {
