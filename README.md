@@ -1,8 +1,5 @@
 # node-tab: Unix-style tables for command-line utilities
 
-**Status**: This README describes what this module *will* be.  It's not yet
-implemented.
-
 This module implements functions for reading and writing Unix-style command line
 tables.  The model mimics that of traditional Unix commands like "ps", which
 emit a table with a default set of columns that can be customized using command
@@ -164,11 +161,9 @@ To ingest streaming tabular input, create a TableInputStream and listen for the
         'columns': [ 'pid', 'tty', 'time', 'cmd' ]
     });
 
-    input.on('row', function (row) {
-        console.log(row);
-    });
+    input.on('row', console.log);
 
-This would emit:
+For the above outputs, this would emit:
 
     { pid: '60881',
       tty: 'ttys000',
@@ -179,12 +174,27 @@ This would emit:
       time: '0:00.17',
       cmd: 'vim README.md' }
 
+If the first row is the header row, you can leave off "columns":
+
+    var input = new mod_tab.TableInputStream({ 'stream': process.stdin });
+    input.on('row', console.log);
+
+Pipe "ps" to that and get:
+
+    { PID: '60881',
+      TTY: 'ttys000',
+      TIME: '0:00.19',
+      CMD: '-bash' }
+    { PID: '61674',
+      TTY: 'ttys000',
+      TIME: '0:00.17',
+      CMD: 'vim README.md' }
+
 You could get arrays instead by specifying the 'format' property:
 
     var input = new mod_tab.TableInputStream({
         'format': 'array',
         'stream': process.stdin,
-        'columns': [ 'pid', 'tty', 'time', 'cmd' ]
     });
 
     input.on('row', function (row) {
@@ -209,8 +219,7 @@ in:
 
     /* split on semicolon or comma */
     var input = new mod_tab.TableInputStream({
-        'delim': /,;/,
+        'delim': /[,;]/,
         'stream': process.stdin,
         'columns': [ 'pid', 'tty', 'time', 'cmd' ]
     });
-
