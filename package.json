@@ -1,6 +1,6 @@
 {
   "name": "tab",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Unix-style tables for command-line utilities",
   "main": "lib/tab.js",
   "repository": {
@@ -11,9 +11,9 @@
   "author": "Dave Pacheco <dap@joyent.com>",
   "license": "MIT",
   "dependencies": {
-  	"assert-plus": "0.1.0",
+  	"assert-plus": "1.0.0",
 	"carrier": "0.1.7",
-	"extsprintf": "1.0.1",
-	"strsplit": "1.0.0"
+	"extsprintf": "^1.3.0",
+	"strsplit": "^1.0.0"
   }
 }
