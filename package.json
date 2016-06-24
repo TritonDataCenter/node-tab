@@ -5,7 +5,7 @@
   "main": "lib/tab.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/davepacheco/node-tab"
+    "url": "https://github.com/joyent/node-tab"
   },
   "keywords": [ "cli", "unix", "table" ],
   "author": "Dave Pacheco <dap@joyent.com>",
